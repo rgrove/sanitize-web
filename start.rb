@@ -5,9 +5,22 @@ gem 'manveru-ramaze', '=2008.12'
 require 'ramaze'
 require 'sanitize'
 
+require 'lib/helper/error'
+
 Ramaze::Global.sourcereload = false
 
+Ramaze::Dispatcher::Error::HANDLE_ERROR.update({
+  Ramaze::Error::NoAction     => [404, 'error_404'],
+  Ramaze::Error::NoController => [404, 'error_404']
+})
+
+Ramaze::Dispatcher::Error::HANDLE_ERROR.update({
+  ArgumentError => [404, 'error_404'],
+  Exception     => [500, 'error_500']
+})
+
 class MainController < Ramaze::Controller
+  helper :error
   engine :Erubis
 
   def index
