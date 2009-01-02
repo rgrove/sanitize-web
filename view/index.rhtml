@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+<head>
+  <title>Test Sanitize</title>
+  <style type="text/css">
+    body {
+      background: #fff;
+      color: #000;
+    }
+
+    div.html {
+      border: 1px solid #cfcfcf;
+      padding: 8px;
+    }
+
+    label { font-weight: bold; }
+    textarea { width: 100%; }
+  </style>
+</head>
+<body>
+  <h1>Test Sanitize</h1>
+
+  <p>
+    See if you can sneak some naughty HTML past
+    <a href="http://github.com/rgrove/sanitize/">Sanitize</a>.
+  </p>
+
+  <form action="./" method="post">
+    <% if @html %>
+      <div class="html"><%= @html %></div>
+    <% end %>
+
+    <p>
+      <label for="html">HTML:</label>
+      <textarea name="html" id="html" rows="10" cols="60"><%== @html_raw %></textarea>
+    </p>
+
+    <p>
+      <label for="config">Sanitize config:</label>
+      <select name="config" id="config">
+        <option<%= ' selected="selected"' if @config == 'default' %>>default</option>
+        <option<%= ' selected="selected"' if @config == 'restricted' %>>restricted</option>
+        <option<%= ' selected="selected"' if @config == 'basic' %>>basic</option>
+        <option<%= ' selected="selected"' if @config == 'relaxed' %>>relaxed</option>
+      </select>
+    </p>
+
+    <p>
+      <input type="submit" value="Sanitize!" />
+    </p>
+  </form>
+</body>
+</html>
