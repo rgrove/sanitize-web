@@ -1,6 +1,6 @@
 require 'rubygems'
 
-gem 'manveru-ramaze', '=2008.12'
+gem 'ramaze', '=2009.01'
 
 require 'ramaze'
 require 'sanitize'
