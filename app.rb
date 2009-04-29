@@ -1,23 +1,11 @@
 require 'rubygems'
 
-gem 'ramaze', '=2009.01'
+gem 'ramaze', '=2009.04'
 
 require 'ramaze'
 require 'sanitize'
 
 require 'lib/helper/error'
-
-Ramaze::Global.sourcereload = false
-
-Ramaze::Dispatcher::Error::HANDLE_ERROR.update({
-  Ramaze::Error::NoAction     => [404, 'error_404'],
-  Ramaze::Error::NoController => [404, 'error_404']
-})
-
-Ramaze::Dispatcher::Error::HANDLE_ERROR.update({
-  ArgumentError => [404, 'error_404'],
-  Exception     => [500, 'error_500']
-})
 
 class MainController < Ramaze::Controller
   helper :error
@@ -34,5 +22,11 @@ class MainController < Ramaze::Controller
       @html_raw = request[:html]
       @html     = Sanitize.clean(@html_raw, Sanitize::Config.const_get(@config.upcase))
     end
+  end
+
+  # Displays a custom 404 error when a nonexistent action is requested.
+  def self.action_missing(path)
+    return if path == '/error_404'
+    try_resolve('/error_404')
   end
 end
