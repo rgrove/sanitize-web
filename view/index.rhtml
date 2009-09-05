@@ -6,15 +6,35 @@
     body {
       background: #fff;
       color: #000;
+      font: 16px 'Times New Roman', 'Times', serif;
     }
 
-    div.html {
-      border: 1px solid #cfcfcf;
-      padding: 8px;
+    h2 {
+      font-size: 16px;
+      font-weight: bold;
+      margin: 1.5em 0 0;
     }
 
     label { font-weight: bold; }
+    p { margin: 0 0 1em; }
     textarea { width: 100%; }
+
+    .html,
+    .html-raw {
+      border: 1px solid #cfcfcf;
+      margin: 0;
+      padding: 8px;
+    }
+
+    .html-raw {
+      font-family: Menlo, 'Bitstream Vera Sans Mono', Consolas, monospace;
+      font-size: 12px;
+    }
+
+    .ft {
+      color: #afafaf;
+      font-size: 12px;
+    }
   </style>
 </head>
 <body>
@@ -25,13 +45,18 @@
     <a href="http://github.com/rgrove/sanitize/">Sanitize</a>.
   </p>
 
+  <% if @html %>
+    <h2>Filtered HTML (source)</h2>
+    <pre class="html-raw"><code><%== @html %></code></pre>
+
+    <h2>Filtered HTML (rendered)</h2>
+    <div class="html"><%= @html %></div>
+  <% end %>
+
   <form action="./" method="post">
-    <% if @html %>
-      <div class="html"><%= @html %></div>
-    <% end %>
+    <h2><label for="html">HTML input:</label></h2>
 
     <p>
-      <label for="html">HTML:</label>
       <textarea name="html" id="html" rows="10" cols="60"><%== @html_raw %></textarea>
     </p>
 
@@ -48,12 +73,16 @@
     <p>
       <input type="submit" value="Sanitize!" />
     </p>
-
-    <p>
-      If you do manage to sneak something naughty past Sanitize, please
-      <a href="mailto:ryan@wonko.com">email me</a> and tell me what you did so
-      I can fix it.
-    </p>
   </form>
+
+  <p>
+    If you do manage to sneak something naughty past Sanitize, please
+    <a href="mailto:ryan@wonko.com">email me</a> and tell me what you did so
+    I can fix it.
+  </p>
+
+  <p class="ft">
+    Sanitize <%= Sanitize::VERSION %>
+  </p>
 </body>
 </html>

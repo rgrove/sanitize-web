@@ -1,7 +1,5 @@
 require 'rubygems'
 
-gem 'ramaze', '=2009.04'
-
 require 'ramaze'
 require 'sanitize'
 
@@ -12,6 +10,8 @@ class MainController < Ramaze::Controller
   engine :Erubis
 
   def index
+    response['Content-Type'] = 'text/html; charset=UTF-8'
+
     if request.post?
       @config = request[:config].strip.downcase
 
