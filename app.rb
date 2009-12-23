@@ -1,5 +1,7 @@
 require 'rubygems'
 
+gem 'sanitize', '>= 1.1.0'
+
 require 'ramaze'
 require 'sanitize'
 
