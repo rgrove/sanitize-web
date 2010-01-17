@@ -1,6 +1,6 @@
 require 'rubygems'
 
-gem 'sanitize', '>= 1.1.0'
+gem 'sanitize', '>= 1.2.0'
 
 require 'ramaze'
 require 'sanitize'
@@ -16,7 +16,7 @@ class MainController < Ramaze::Controller
 
     if request.post?
       @config = request[:config].strip.downcase
-
+      
       unless ['basic', 'restricted', 'relaxed'].include?(@config)
         @config = 'default'
       end
