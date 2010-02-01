@@ -15,14 +15,24 @@ class MainController < Ramaze::Controller
     response['Content-Type'] = 'text/html; charset=UTF-8'
 
     if request.post?
-      @config = request[:config].strip.downcase
-      
-      unless ['basic', 'restricted', 'relaxed'].include?(@config)
-        @config = 'default'
+      @config_name     = request[:config].strip.downcase
+      @remove_contents = request[:remove_contents] == '1'
+      @escape_only     = !@remove_contents && request[:escape_only] == '1'
+
+      unless ['basic', 'restricted', 'relaxed'].include?(@config_name)
+        @config_name = 'default'
+      end
+
+      @config = Sanitize::Config.const_get(@config_name.upcase).dup
+
+      if @remove_contents
+        @config.merge!(:remove_contents => true)
+      elsif @escape_only
+        @config.merge!(:escape_only => true)
       end
 
       @html_raw = request[:html]
-      @html     = Sanitize.clean(@html_raw, Sanitize::Config.const_get(@config.upcase))
+      @html     = Sanitize.clean(@html_raw, @config)
     end
   end
 

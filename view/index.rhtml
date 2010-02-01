@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
 <head>
   <title>Test Sanitize</title>
@@ -15,8 +15,6 @@
       margin: 1.5em 0 0;
     }
 
-    label { font-weight: bold; }
-    p { margin: 0 0 1em; }
     textarea { width: 100%; }
 
     .html,
@@ -57,19 +55,29 @@
   <form action="./" method="post">
     <h2><label for="html">HTML input:</label></h2>
 
-    <p>
-      <textarea name="html" id="html" rows="10" cols="60"><%== @html_raw %></textarea>
-    </p>
+    <div><textarea name="html" id="html" rows="10" cols="60"><%== @html_raw %></textarea></div>
 
-    <p>
-      <label for="config">Sanitize config:</label>
-      <select name="config" id="config">
-        <option<%= ' selected="selected"' if @config == 'default' %>>default</option>
-        <option<%= ' selected="selected"' if @config == 'restricted' %>>restricted</option>
-        <option<%= ' selected="selected"' if @config == 'basic' %>>basic</option>
-        <option<%= ' selected="selected"' if @config == 'relaxed' %>>relaxed</option>
-      </select>
-    </p>
+    <fieldset>
+      <legend>Options</legend>
+      <div>
+        <label for="config">Sanitize config:</label>
+        <select name="config" id="config">
+          <option<%= ' selected="selected"' if @config_name == 'default' %>>default</option>
+          <option<%= ' selected="selected"' if @config_name == 'restricted' %>>restricted</option>
+          <option<%= ' selected="selected"' if @config_name == 'basic' %>>basic</option>
+          <option<%= ' selected="selected"' if @config_name == 'relaxed' %>>relaxed</option>
+        </select>
+      </div>
+
+      <div>
+        <input type="checkbox" id="escape_only" name="escape_only" value="1" <%= @escape_only ? 'checked="checked"' : '' %> />
+        <label for="escape_only">Escape non-whitelisted elements instead of removing them</label>
+        <br />
+
+        <input type="checkbox" id="remove_contents" name="remove_contents" value="1" <%= @remove_contents ? 'checked="checked"' : '' %> />
+        <label for="remove_contents">Remove the contents of non-whitelisted elements</label>
+      </div>
+    </fieldset>
 
     <p>
       <input type="submit" value="Sanitize!" />
