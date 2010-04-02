@@ -17,7 +17,6 @@ class MainController < Ramaze::Controller
     if request.post?
       @config_name     = request[:config].strip.downcase
       @remove_contents = request[:remove_contents] == '1'
-      @escape_only     = !@remove_contents && request[:escape_only] == '1'
 
       unless ['basic', 'restricted', 'relaxed'].include?(@config_name)
         @config_name = 'default'
@@ -27,8 +26,6 @@ class MainController < Ramaze::Controller
 
       if @remove_contents
         @config.merge!(:remove_contents => true)
-      elsif @escape_only
-        @config.merge!(:escape_only => true)
       end
 
       @html_raw = request[:html]
