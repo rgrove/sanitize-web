@@ -5,7 +5,7 @@ gem 'sanitize', '>= 1.2.0'
 require 'ramaze'
 require 'sanitize'
 
-require 'lib/helper/error'
+require './lib/helper/error'
 
 class MainController < Ramaze::Controller
   helper :error
