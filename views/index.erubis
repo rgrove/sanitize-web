@@ -41,7 +41,7 @@
 
   <p>
     See if you can sneak some naughty HTML past
-    <a href="http://github.com/rgrove/sanitize/">Sanitize</a>.
+    <a href="https://github.com/rgrove/sanitize/">Sanitize</a>.
   </p>
 
   <% if @html %>
