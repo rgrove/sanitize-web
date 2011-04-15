@@ -10,10 +10,13 @@ class Sanitize::Web < Sinatra::Base
   set :logging, true
 
   get '/' do
+    content_type 'text/html', :charset => 'utf-8'
     erubis(:index)
   end
 
   post '/' do
+    content_type 'text/html', :charset => 'utf-8'
+
     @config_name     = params[:config].strip.downcase
     @remove_contents = params[:remove_contents] == '1'
 
