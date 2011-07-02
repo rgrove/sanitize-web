@@ -1,6 +1,6 @@
 require 'rubygems'
 
-gem 'sanitize', '>= 1.2.0'
+gem 'sanitize', '>= 2.0.3'
 
 require 'erubis'
 require 'sinatra/base'
