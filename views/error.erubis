@@ -1,0 +1,5 @@
+<h1>Error <%== @code %></h1>
+
+<% if @message %>
+  <p><%== @message %></p>
+<% end %>

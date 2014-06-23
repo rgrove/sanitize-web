@@ -1,0 +1,46 @@
+html {
+  background: #fff;
+  color: #333;
+}
+
+body {
+  font: 16px Helvetica, sans-serif;
+  padding: 0 1em;
+}
+
+h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 1.5em 0 0;
+}
+
+p { clear: both; }
+
+textarea { width: 99%; }
+
+.left,
+.right {
+  float: left;
+  width: 48%;
+}
+
+.right { padding-left: 1em; }
+
+.html,
+.html-raw {
+  border: 1px solid #cfcfcf;
+  margin: 0;
+  overflow-x: auto;
+  padding: 8px;
+}
+
+textarea,
+.html-raw {
+  font-family: 'Source Code Pro', Menlo, 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', monospace;
+  font-size: 0.9em;
+}
+
+.ft {
+  color: #afafaf;
+  font-size: 0.9em;
+}
