@@ -1,20 +1,20 @@
 GEM
   remote: https://rubygems.org/
   specs:
-    crass (0.2.0)
+    crass (0.2.1)
     erubis (2.7.0)
     mini_portile (0.6.0)
-    nokogiri (1.6.2.1)
+    nokogiri (1.6.3.1)
       mini_portile (= 0.6.0)
-    nokogumbo (1.1.9)
+    nokogumbo (1.1.11)
       nokogiri
     rack (1.5.2)
     rack-protection (1.5.3)
       rack
-    sanitize (3.0.0)
+    sanitize (3.0.1)
       crass (~> 0.2.0)
       nokogiri (>= 1.4.4)
-      nokogumbo (= 1.1.9)
+      nokogumbo (= 1.1.11)
     sinatra (1.4.5)
       rack (~> 1.4)
       rack-protection (~> 1.4)
