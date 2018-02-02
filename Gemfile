@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
-ruby "2.1.2"
+ruby "2.5.0"
 
 gem 'erubis', '~>2.7.0'
-gem 'sanitize', '>=3.0.0'
-gem 'sinatra', '~>1.4.5'
+gem 'sanitize', '~>4.6'
+gem 'sinatra', '~>2.0'
