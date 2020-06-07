@@ -1,38 +1,40 @@
 GEM
   remote: https://rubygems.org/
   specs:
-    crass (1.0.3)
+    crass (1.0.6)
     erubis (2.7.0)
-    mini_portile2 (2.3.0)
-    mustermann (1.0.2)
-    nokogiri (1.8.2)
-      mini_portile2 (~> 2.3.0)
-    nokogumbo (1.5.0)
-      nokogiri
-    rack (2.0.4)
-    rack-protection (2.0.1)
+    mini_portile2 (2.4.0)
+    mustermann (1.1.1)
+      ruby2_keywords (~> 0.0.1)
+    nokogiri (1.10.9)
+      mini_portile2 (~> 2.4.0)
+    nokogumbo (2.0.2)
+      nokogiri (~> 1.8, >= 1.8.4)
+    rack (2.2.2)
+    rack-protection (2.0.8.1)
       rack
-    sanitize (4.6.4)
+    ruby2_keywords (0.0.2)
+    sanitize (5.2.0)
       crass (~> 1.0.2)
-      nokogiri (>= 1.4.4)
-      nokogumbo (~> 1.4)
-    sinatra (2.0.1)
+      nokogiri (>= 1.8.0)
+      nokogumbo (~> 2.0)
+    sinatra (2.0.8.1)
       mustermann (~> 1.0)
       rack (~> 2.0)
-      rack-protection (= 2.0.1)
+      rack-protection (= 2.0.8.1)
       tilt (~> 2.0)
-    tilt (2.0.8)
+    tilt (2.0.10)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
   erubis (~> 2.7.0)
-  sanitize (~> 4.6.4)
-  sinatra (~> 2.0.1)
+  sanitize (~> 5.2.0)
+  sinatra (~> 2.0.8)
 
 RUBY VERSION
-   ruby 2.5.0p0
+   ruby 2.7.1p83
 
 BUNDLED WITH
-   1.16.1
+   2.1.4

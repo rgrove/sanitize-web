@@ -30,7 +30,7 @@ See if you can sneak some naughty HTML past
 
         <br>
         <input type="checkbox" id="remove_contents" name="remove_contents" value="1" <%= @remove_contents ? 'checked' : '' %>>
-        <label for="remove_contents">Remove the contents of non-whitelisted elements.</label>
+        <label for="remove_contents">Remove the contents of non-allowlisted elements.</label>
       </p>
     </fieldset>
 
