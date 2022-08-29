@@ -1,8 +1,6 @@
-# encoding: utf-8
-require 'bundler'
-
-Bundler.require
-
+require 'rubygems'
+require 'bundler/setup'
+require 'sanitize'
 require 'sinatra/base'
 
 class Sanitize::Web < Sinatra::Base
