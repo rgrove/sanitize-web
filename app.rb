@@ -54,6 +54,10 @@ class Sanitize::Web < Sinatra::Base
     erb :index
   end
 
+  not_found do
+    error(404, 'Not Found')
+  end
+
   # -- Helpers -----------------------------------------------------------------
   def error(code = 500, message = nil)
     @code    = code
