@@ -15,16 +15,16 @@ GEM
       racc (~> 1.4)
     racc (1.6.0)
     rack (2.2.4)
-    rack-protection (2.2.2)
+    rack-protection (2.2.3)
       rack
     ruby2_keywords (0.0.5)
     sanitize (6.0.0)
       crass (~> 1.0.2)
       nokogiri (>= 1.12.0)
-    sinatra (2.2.2)
+    sinatra (2.2.3)
       mustermann (~> 2.0)
       rack (~> 2.2)
-      rack-protection (= 2.2.2)
+      rack-protection (= 2.2.3)
       tilt (~> 2.0)
     thin (1.8.1)
       daemons (~> 1.0, >= 1.0.9)
@@ -40,7 +40,7 @@ PLATFORMS
 DEPENDENCIES
   erubis (~> 2.7.0)
   sanitize (~> 6.0.0)
-  sinatra (~> 2.2.0)
+  sinatra (~> 2.2.3)
   thin (~> 1.8.1)
 
 RUBY VERSION
