@@ -7,24 +7,22 @@ GEM
     eventmachine (1.2.7)
     mustermann (2.0.2)
       ruby2_keywords (~> 0.0.1)
-    nokogiri (1.13.8-arm64-darwin)
+    nokogiri (1.14.0-arm64-darwin)
       racc (~> 1.4)
-    nokogiri (1.13.8-x86_64-darwin)
+    nokogiri (1.14.0-x86_64-linux)
       racc (~> 1.4)
-    nokogiri (1.13.8-x86_64-linux)
-      racc (~> 1.4)
-    racc (1.6.0)
-    rack (2.2.4)
-    rack-protection (2.2.2)
+    racc (1.6.2)
+    rack (2.2.6.2)
+    rack-protection (2.2.4)
       rack
     ruby2_keywords (0.0.5)
-    sanitize (6.0.0)
+    sanitize (6.0.1)
       crass (~> 1.0.2)
       nokogiri (>= 1.12.0)
-    sinatra (2.2.2)
+    sinatra (2.2.4)
       mustermann (~> 2.0)
       rack (~> 2.2)
-      rack-protection (= 2.2.2)
+      rack-protection (= 2.2.4)
       tilt (~> 2.0)
     thin (1.8.1)
       daemons (~> 1.0, >= 1.0.9)
@@ -33,18 +31,17 @@ GEM
     tilt (2.0.11)
 
 PLATFORMS
-  arm64-darwin-21
-  x86_64-darwin-20
+  arm64-darwin-22
   x86_64-linux
 
 DEPENDENCIES
   erubis (~> 2.7.0)
-  sanitize (~> 6.0.0)
+  sanitize (~> 6.0.1)
   sinatra (~> 2.2.0)
   thin (~> 1.8.1)
 
 RUBY VERSION
-   ruby 3.1.2p20
+   ruby 3.2.0p0
 
 BUNDLED WITH
-   2.3.21
+   2.4.1
