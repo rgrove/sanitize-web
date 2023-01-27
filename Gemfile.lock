@@ -37,7 +37,7 @@ PLATFORMS
 DEPENDENCIES
   erubis (~> 2.7.0)
   sanitize (~> 6.0.1)
-  sinatra (~> 2.2.0)
+  sinatra (~> 2.2.3)
   thin (~> 1.8.1)
 
 RUBY VERSION
