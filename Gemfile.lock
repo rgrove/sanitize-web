@@ -2,7 +2,7 @@ GEM
   remote: https://rubygems.org/
   specs:
     base64 (0.3.0)
-    crass (1.0.6)
+    crass (1.0.7)
     daemons (1.4.1)
     erubis (2.7.0)
     eventmachine (1.2.7)
